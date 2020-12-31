@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Golf-Stat-Keeper/static/css/main.a88860a0.chunk.css",
-    "main.js": "/Golf-Stat-Keeper/static/js/main.9b5b4f38.chunk.js",
-    "main.js.map": "/Golf-Stat-Keeper/static/js/main.9b5b4f38.chunk.js.map",
+    "main.js": "/Golf-Stat-Keeper/static/js/main.de4b987f.chunk.js",
+    "main.js.map": "/Golf-Stat-Keeper/static/js/main.de4b987f.chunk.js.map",
     "runtime-main.js": "/Golf-Stat-Keeper/static/js/runtime-main.d86a5c9f.js",
     "runtime-main.js.map": "/Golf-Stat-Keeper/static/js/runtime-main.d86a5c9f.js.map",
     "static/js/2.62c6078f.chunk.js": "/Golf-Stat-Keeper/static/js/2.62c6078f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d86a5c9f.js",
     "static/js/2.62c6078f.chunk.js",
     "static/css/main.a88860a0.chunk.css",
-    "static/js/main.9b5b4f38.chunk.js"
+    "static/js/main.de4b987f.chunk.js"
   ]
 }
