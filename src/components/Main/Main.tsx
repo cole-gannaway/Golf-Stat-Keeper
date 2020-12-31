@@ -66,7 +66,7 @@ class Main extends Component<{}, { data: any, selectedRoundStatsId: string }> {
 
     let content = (<div></div>);
 
-    const roundStats = rounds.find(round => this.state.data[this.state.selectedRoundStatsId]);
+    const roundStats = this.state.data[this.state.selectedRoundStatsId];
     if (this.state.selectedRoundStatsId !== '' && roundStats) {
       content = (<EditRoundStatsPage dbService={dbService} roundStats={roundStats} goHome={this.resetSelectedRoundId} ></EditRoundStatsPage>);
     } else {
