@@ -6,6 +6,8 @@ import DatabaseService from '../../services/database-service';
 import SaveIcon from '@material-ui/icons/Save';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
+import FairwayInput from '../FairwayInput/FairwayInput';
+
 class EditRoundStatsContainer extends Component<{ dbService: DatabaseService, roundKey: string, roundNickname: string, holeStatsArr: IHoleStats[], goBack(): void }, { holeId: number, strokes: number, fairway: string, gir: boolean, putts: number, penaltyStrokes: number, chips: number, sandStrokes: number, holeKey: string, holeIndex: number }> {
 
   constructor(props: any) {
@@ -30,6 +32,7 @@ class EditRoundStatsContainer extends Component<{ dbService: DatabaseService, ro
     this.handleChangeStrokes = this.handleChangeStrokes.bind(this);
     this.handleChangeChips = this.handleChangeChips.bind(this);
     this.handleChangePutts = this.handleChangePutts.bind(this);
+    this.handleChangeFairway = this.handleChangeFairway.bind(this);
     this.handleChangeSandStrokes = this.handleChangeSandStrokes.bind(this);
     this.handleChangeToggleGIR = this.handleChangeToggleGIR.bind(this);
     this.handleChangePenaltyStrokes = this.handleChangePenaltyStrokes.bind(this);
@@ -45,6 +48,7 @@ class EditRoundStatsContainer extends Component<{ dbService: DatabaseService, ro
       <div>{this.props.roundNickname}</div>
       <div><TextField label="Hole" type='number' value={this.state.holeId} disabled={true}></TextField></div>
       <div><TextField label="Strokes" type='number' value={this.state.strokes} onChange={this.handleChangeStrokes}></TextField></div>
+      <FairwayInput onChange={this.handleChangeFairway} value={this.state.fairway}></FairwayInput>
       <div>GIR <Switch checked={this.state.gir} onChange={this.handleChangeToggleGIR} inputProps={{ 'aria-label': 'secondary checkbox' }} /></div>
       <div><TextField label="Putts" type='number' value={this.state.putts} onChange={this.handleChangePutts}></TextField></div>
       <div><TextField label="Penalty Strokes" type='number' value={this.state.penaltyStrokes} onChange={this.handleChangePenaltyStrokes}></TextField></div>
@@ -79,6 +83,9 @@ class EditRoundStatsContainer extends Component<{ dbService: DatabaseService, ro
   }
   private handleClickPrevHole(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     this.changeHole(this.state.holeIndex - 1);
+  }
+  private handleChangeFairway(newFairway: string) {
+    this.setState({ fairway: newFairway })
   }
   private changeHole(newHoleIndex: number) {
     const selectedHoleStats = this.props.holeStatsArr[newHoleIndex];
